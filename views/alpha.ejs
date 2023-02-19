@@ -9,15 +9,15 @@
         }
     </style>
     <div class="container">
-        <div class="bg col-6 bg-dark p-1">
+        <div class="bg col-6">
             <% if (arrayEscuderia.length> 0) { %>
                 <!--Haremos el foreach para recorrer el array-->
                 <% arrayEscuderia.forEach(escuderia=> { %>
-                    <p class="text-white">La escuderia <%= escuderia.nombre %> es la sucesora de Toro Rosso, nacio en <%= escuderia.fundacion %>.
+                    <p class="text-white bg-dark p-1">La escuderia <%= escuderia.nombre %> es la sucesora de Toro Rosso, nacio en <%= escuderia.fundacion %>.
                         Siempre han tenido actuaciones buenas, pero su principal objetivo es ayudar a Red Bull
                     </p>
 
-                    <p class="text-white">Con sede en <%= escuderia.pais %>, este año intentarán luchar por liderar la tabla media
+                    <p class="text-white bg-dark p-1">Con sede en <%= escuderia.pais %>, este año intentarán luchar por liderar la tabla media
                             con su
                             mejorado motor
                             <%= escuderia.motor %>. El equipo <%= escuderia.nombre %> tuvo problemas el año pasado pero
