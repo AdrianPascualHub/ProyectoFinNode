@@ -1,0 +1,49 @@
+<%- include("template/cabecera", {tituloWeb: 'Circuito' }) %>
+    <style>
+        body {
+            background-image: url("/img/fondo12.jpg");
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <div class="table-responsive">
+        <table class="table text-white align-middle">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Pais</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">Kilometros</th>
+                    <th scope="col">Curvas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (arrayCircuito.length> 0) { %>
+                    <!--Haremos el foreach para recorrer el array-->
+                    <% arrayCircuito.forEach(circuito=> { %>
+                        <tr>
+                            <td>
+                                <%= circuito.nombre %>
+                            </td>
+                            <td>
+                                <%= circuito.pais %>
+                            </td>
+                            <td>
+                                <%= circuito.ciudad %>
+                            </td>
+                            <td>
+                                <%= circuito.kilometros %>
+                            </td>
+                            <td>
+                                <%= circuito.curvas %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                            <% } %>
+            </tbody>
+        </table>
+    </div>
+
+    <a class="nav-link" href="/">Volver al inicio</a>

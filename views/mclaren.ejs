@@ -1,0 +1,70 @@
+<%- include("template/cabecera", {tituloWeb: 'McLaren' }) %>
+<style>
+    body{
+        background-image: url("/img/fondo11.jpg");    
+        background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  
+    }
+</style>
+<div class="container">        
+    <div class="bg col-6">
+        <% if (arrayEscuderia.length> 0) { %>
+            <!--Haremos el foreach para recorrer el array-->
+            <% arrayEscuderia.forEach(escuderia=> { %>
+                <p class="text-white">La escuderia <%= escuderia.nombre %> es una de las automotrices más exitosas de la
+                        Fórmula
+                        1,
+                        considerada
+                        uno de los cuatro equipos con mejores resultados, junto con Williams, Ferrari y Mercedes. Su
+                        fundacion dió lugar en <%= escuderia.fundacion %>.
+                </p>
+
+                <p class="text-white">Con sede en <%= escuderia.pais %>, este año intentarán luchar el campeonato con su
+                        mejorado motor
+                        <%= escuderia.motor %>. El equipo <%= escuderia.nombre %> tuvo problemas el año pasado pero
+                                creen que han solucionado estos problemas y seran capaces de ganar este año.</p>
+                <% }) %>
+                    <% } %>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="table-responsive">
+    <table class=" text-white table align-middle">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Nombre Piloto</th>
+                <th scope="col">Pais</th>
+                <th scope="col">Num_Carrera</th>
+                <th scope="col">Victorias</th>
+                <th scope="col">Podios</th>
+                <th scope="col">Dorsal</th>
+                <th scope="col">Escuderia</th>
+            </tr>
+        </thead>
+    <tbody>
+        
+        <% if (arrayPiloto.length> 0) { %>
+            <!--Haremos el foreach para recorrer el array-->
+            <% arrayPiloto.forEach(piloto => { %>
+                <tr>
+                    <td><%= piloto.nombre %></td>
+                    <td><%= piloto.pais %></td>
+                    <td><%= piloto.num_Carreras %></td>
+                    <td><%= piloto.victoria %></td>
+                    <td><%= piloto.podio %></td>
+                    <td><%= piloto.dorsal %></td>
+                    <td><%= piloto.escuderia %></td>
+                </tr>
+            <% }) %>
+        <% } %>
+  </tbody>
+</table>
+</div>
+<a class="nav-link" href="/">Volver al inicio</a>

@@ -1,0 +1,66 @@
+<%- include("template/cabecera", {tituloWeb: 'Alpine' }) %>
+<style>
+    body{
+        background-image: url("/img/fondo3.jpg");
+        background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+    }
+</style>
+<div class="container">        
+    <div class="bg4 bg col-6">
+        <% if (arrayEscuderia.length> 0) { %>
+            <!--Haremos el foreach para recorrer el array-->
+            <% arrayEscuderia.forEach(escuderia=> { %>
+                <p class="text-white">La escuderia <%= escuderia.nombre %> es una de las escuderias mas nuevas en la Fórmula
+                        1,
+                        <%= escuderia.nombre %> es hija de renault la cual dejo a Alpine ser la cara de renault en la F1 desde <%= escuderia.fundacion %>.
+                </p>
+
+                <p class="text-white">Con sede en <%= escuderia.pais %>, este año intentarán por alcanzar el top 3, con su motor
+                        <%= escuderia.motor %> el año pasado tuvieron muchos problemas de fiabilidad y creen haber mejorado en este aspecto pero no en su rendimiento.</p>
+                <% }) %>
+                    <% } %>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="table-responsive">
+    <table class="text-white  table align-middle">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Nombre Piloto</th>
+                <th scope="col">Pais</th>
+                <th scope="col">Num_Carrera</th>
+                <th scope="col">Victorias</th>
+                <th scope="col">Podios</th>
+                <th scope="col">Dorsal</th>
+                <th scope="col">Escuderia</th>
+            </tr>
+        </thead>
+    <tbody>
+        
+        <% if (arrayPiloto.length> 0) { %>
+            <!--Haremos el foreach para recorrer el array-->
+            <% arrayPiloto.forEach(piloto => { %>
+                <tr>
+                    <td><%= piloto.nombre %></td>
+                    <td><%= piloto.pais %></td>
+                    <td><%= piloto.num_Carreras %></td>
+                    <td><%= piloto.victoria %></td>
+                    <td><%= piloto.podio %></td>
+                    <td><%= piloto.dorsal %></td>
+                    <td><%= piloto.escuderia %></td>
+                </tr>
+            <% }) %>
+        <% } %>
+  </tbody>
+</table>
+</div>
+<a class="text-white nav-link" href="/">Volver al inicio</a>

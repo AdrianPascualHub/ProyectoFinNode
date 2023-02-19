@@ -1,0 +1,83 @@
+<%- include("template/cabecera", {tituloWeb: 'Alfa Romeo' }) %>
+    <style>
+        body {
+            background-image: url("/img/fondo8.jpg");
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <div class="container">
+        <div class="bg col-6">
+            <% if (arrayEscuderia.length> 0) { %>
+                <!--Haremos el foreach para recorrer el array-->
+                <% arrayEscuderia.forEach(escuderia=> { %>
+                    <p class="text-black">La escuderia <%= escuderia.nombre %> es una de las automotrices más nuevas 
+                            de la
+                            Fórmula
+                            1,
+                            nacio de sauber y aunque siempre arranca los campeonatos liderando la tabla media gracias a su motor <%= escuderia.motor %> siempre se desinflan. Su
+                            fundacion dió lugar en <%= escuderia.fundacion %>.
+                    </p>
+
+                    <p class="text-black">Con sede en <%= escuderia.pais %>, este año intentarán luchar por liderar la tabla media con su
+                            mejorado motor
+                            <%= escuderia.motor %>. El equipo <%= escuderia.nombre %> tuvo muchos problemas el año pasado y esperan mejorar su rendimiento.</p>
+                    <% }) %>
+                        <% } %>
+        </div>
+    </div>
+    <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <div class="table-responsive">
+        <table class=" text-black table align-middle">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nombre Piloto</th>
+                    <th scope="col">Pais</th>
+                    <th scope="col">Num_Carrera</th>
+                    <th scope="col">Victorias</th>
+                    <th scope="col">Podios</th>
+                    <th scope="col">Dorsal</th>
+                    <th scope="col">Escuderia</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <% if (arrayPiloto.length> 0) { %>
+                    <!--Haremos el foreach para recorrer el array-->
+                    <% arrayPiloto.forEach(piloto=> { %>
+                        <tr>
+                            <td>
+                                <%= piloto.nombre %>
+                            </td>
+                            <td>
+                                <%= piloto.pais %>
+                            </td>
+                            <td>
+                                <%= piloto.num_Carreras %>
+                            </td>
+                            <td>
+                                <%= piloto.victoria %>
+                            </td>
+                            <td>
+                                <%= piloto.podio %>
+                            </td>
+                            <td>
+                                <%= piloto.dorsal %>
+                            </td>
+                            <td>
+                                <%= piloto.escuderia %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                            <% } %>
+            </tbody>
+        </table>
+    </div>
+    <a class="nav-link" href="/">Volver al inicio</a>
